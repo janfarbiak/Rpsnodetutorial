@@ -16,13 +16,17 @@ const writeEvent = (text) => {
 
 const onFormSubmitted = (e) => {
     e.preventDefault();
-    
-    const input = document.querySelector('#chat');
-    const text = input.value;
 
-    input.value = ' ';
+    if(document.forms['chat-form']['chat'].value == ""){
+        alert("empty");
+    }else{
+        const input = document.querySelector('#chat');
+        const text = input.value;
 
-    sock.emit('message', text);
+        input.value = '';
+
+        sock.emit('message', text);
+    }
 };
 
 writeEvent("Welcome human");

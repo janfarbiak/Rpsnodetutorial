@@ -1,5 +1,12 @@
-body, html {margin: auto; text-align: center;}
-li {list-style-type: none;}
+body, html {
+    margin: auto; 
+    text-align: center;
+    font-family: monospace;
+}
+
+li,ul {
+    list-style-type: none;
+}
 
 .rps-wrapper {
     background-color: bisque;
@@ -10,20 +17,26 @@ li {list-style-type: none;}
     border: 2px solid rgb(170, 170, 170);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #events {
     height: 300px;
+    width: auto;
     background-color: rgb(66, 66, 66);
     border-radius: 10px;
     margin: auto;
+    padding: 5px;
+    overflow-y: auto;
 }
 
 #events li {
     width: 100%;
     background-color: rgb(229, 241, 247);
-    margin: 5px auto;
+    margin-top: 5px;
     line-height: 40px;
     border-radius: 10px;
-    float: left;
 }
 
 #chat {
@@ -41,4 +54,6 @@ button {
     line-height: 30px;
     border-radius: 10px;
     border: 2px solid rgb(170, 170, 170);
+    font-family: monospace;
+    font-weight: bold;
 }
