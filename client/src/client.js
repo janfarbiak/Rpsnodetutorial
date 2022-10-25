@@ -1,6 +1,10 @@
 
 const sock = io();
 
+window.addEventListener('unload', () => {
+    sock.emit('disconnect');
+});
+
 const writeEvent = (text) => {
     const parent = document.querySelector('#events');
 
