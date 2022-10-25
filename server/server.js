@@ -1,6 +1,14 @@
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
+const mysql = require('mysql');
+
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "web_chat_app"
+});
 
 const app = express();
 
@@ -18,6 +26,10 @@ io.on('connection', (sock) => {
 
     sock.on('message', (text) => {
         io.emit('message', text);
+    });
+
+    sock.on('disconnect', () => {
+        console.log("Someone disconnected");
     });
 });
 
