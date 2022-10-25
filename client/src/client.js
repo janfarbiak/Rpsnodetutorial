@@ -8,10 +8,13 @@ window.addEventListener('unload', () => {
 const writeEvent = (text) => {
     const parent = document.querySelector('#events');
 
+    
+
     const el = document.createElement('li');
     el.innerHTML = text;
 
     parent.appendChild(el);
+    parent.scrollTop = parent.scrollHeight;
 };
 
 const onFormSubmitted = (e) => {
